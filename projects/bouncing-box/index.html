@@ -76,8 +76,8 @@
 				if (positionX > boardWidth){
 					speed = -speed;
 				}
-				if (positionX <0){
-					-speed * -1;
+				if (positionX < 0) {
+					speed = -speed;
 				}
 			};
 
@@ -90,11 +90,14 @@
 				
 				changeBoxText(points);
 				points = points + 1;
-				if (speed>0){
+				speed = speed + 3;
+				// when i remove the code that speeds up the box each click,
+				// it stops the box from speeding up entirely
+				if (speed >= 0) {
 				 speed + 3;
 				}
-				else if (speed<0){
-					speed -3;
+				else if (speed <= -1){
+					speed - 3;
 				}
 				
 
